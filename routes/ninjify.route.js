@@ -7,6 +7,7 @@ router.get('/ninjify', async (req, res) => {
     } else {
         try {
             lst = await req.lst
+            console.log(lst)
             const arr = req.query.x.split(",")
             var name = arr.map(function(el){
                 let obj = lst.find(x => x.param == el.trim())
