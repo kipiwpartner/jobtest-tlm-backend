@@ -17,7 +17,7 @@ app.use(config.get('api'), getlst(lst), require('./routes/ninjify.route'));
 async function start() {
     try {
         lst = await list
-        app.listen(config.get('port'), () => console.log(`App is starting on port ${config.get('port')}...`))
+        app.listen(config.get('port') || 5000, () => console.log(`App is starting on port ${config.get('port')}...`))
         return lst
     } catch(e){
         console.log('Server Error ', e.message)
