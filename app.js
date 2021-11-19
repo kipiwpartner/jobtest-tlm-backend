@@ -1,6 +1,5 @@
 const express = require("express")
 const config = require('config')
-const path = require('path')
 const cors = require('cors')
 const list = require("./services/genlist")
 const getlst = require("./middleware/getlist")

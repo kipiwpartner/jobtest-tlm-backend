@@ -4,7 +4,7 @@ const casual = require("casual")
 
 async function scrapeData(url) {
   try {
-    let browser = await puppeteer.launch({ headless: true })
+    let browser = await puppeteer.launch({ args: ['--no-sandbox'] })
     const page = await browser.newPage()
     
     await page.goto(url, { waitUntil: "load", timeout: 0 })
@@ -17,8 +17,8 @@ async function scrapeData(url) {
       list.push({name: casual.first_name, param: $(element).text().toLowerCase().replace(/ /g, "-")})
     })
     return list
-  } catch (error) {
-    console.log(error)
+  } catch (e) {
+    console.log(e.message)
   }
 }
 
