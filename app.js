@@ -15,7 +15,7 @@ app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 
 app.use(config.get('api'), getlst(lst), require('./routes/ninjify.route'));
-
+//test
 async function start() {
     try {
         lst = await list
