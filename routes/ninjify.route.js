@@ -3,7 +3,6 @@ const list = require('../config/list')
 
 router.get('/ninjify', async (req, res) => {
 
-    //res.status(200).json(list)
     if (!req.query.x){
         res.status(404).json({message:"Not found"})
     } else {
